@@ -1,0 +1,22 @@
+% Use ulem for better underlining
+\usepackage[normalem]{ulem}
+
+% Define a professional cyan that has better contrast on white backgrounds
+% This is darker than pure {0, 255, 255} to avoidwashing out
+\definecolor{linkcyan}{RGB}{0, 140, 180}
+
+% Redefine \href to underline the text and ensure it uses the color
+\let\oldhref\href
+\renewcommand{\href}[2]{%
+    \oldhref{#1}{\textcolor{linkcyan}{\uline{#2}}}%
+}
+
+% Beamer-specific: Set the URL foreground color
+\setbeamercolor{url}{fg=linkcyan}
+
+% hyperref configuration: Ensure colors are enabled and matched
+\hypersetup{
+    colorlinks=true,
+    linkcolor=linkcyan,
+    urlcolor=linkcyan,
+}

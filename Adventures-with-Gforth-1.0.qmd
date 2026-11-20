@@ -1,0 +1,26 @@
+---
+title: "Adventures with Gforth 1.0"
+subtitle: "Silicon Valley FIG Forth Day, November 21, 2026"
+author: "M. Edward (Ed) Borasky"
+institute: <https://github.com/znmeb/Adventures-with-Gforth-1.0>
+format: 
+    beamer:
+        theme: Montpellier
+        include-in-header: preamble.tex
+        slide-level: 2
+        aspectratio: 169
+editor: source
+---
+
+## Question before the house
+
+- How much computer music can I get out of really tiny computers?
+- Wait? How tiny?
+    - Raspberry Pi Pico W (micro-controller)
+    - Raspberry Pi Pico 2 W (micro-controller)
+    - Raspberry Pi Zero 2 W (small single-board computer)
+- The prime directives:
+    - Develop interactively ***for*** the device ***on*** the device
+    - Command line / terminal user interface
+
+## Sounds like a perfect application for Forth!
