@@ -32,28 +32,33 @@ editor: source
 
 - Develop interactively ***for*** the device ***on*** the device
 - Command line / terminal user interface
+- Can Gforth do this easily?
 
 # GNU Forth 1.0 (Gforth)
 
 ## Basics
 
+- Download link: <https://gforth.org/>
 - GPL 3.0 License
-- Mixed C and Forth code
+- Built with mixed C and Forth code
 - All of Forth 2012 standard plus many extensions
 - Available for Windows, MacOS, Android, some Linux distros
-- Supports mulitple architectures
+- Supports multiple computer architectures
 - Can be compiled for any system with new enough GCC and libraries
-- Extensions useful for computer music
-    - Cross-compiler: create a Forth for micro-controllers on single-board computer
-    - Multi-tasker: use multiple cores, accurate audio timings
+- Two extensions useful for computer music
+    - Cross-compiler: can create a Forth for a new architecture
+    - Multi-tasker: enables multiple core usage and accurate audio timings
 
 ## Challenges
 
 - Too big for micro-controllers - needs a cross(meta)-compiler
     - This is the biggest challenge
+    - Using existing cross-compilers is documented; how to write one isn't
+- Multi-tasker depends on host OS primitives
+    - In place for single-board computers / handhelds
+    - Not in place for some micro-controllers
 - Build from source is complex
     - Raspberry Pi Zero 2 W can't compile - not enough RAM
-    - Not a serious issue - compiles can run on a larger machine
     - Bela Gem can't compile - not enough RAM
     - Not a serious issue - compiles can run on a larger machine
 
@@ -62,12 +67,19 @@ editor: source
 ## Tackle the cross-compilers
 
 - Need two cross-compilers
-    - GCC to build Gforth for the Pi Zero 2 W and Bela Gem
-    - Gforth cross-compiler for the micro-controllers
+    - GCC to build Gforth for the Pi Zero 2 W and Bela Gem (easy)
+    - Gforth cross-compiler for the micro-controllers (challenging)
 
 ## Develop a multi-tasker for the micro-controllers
 
-- Use existing real-time OS and gforth C FFI for Raspberry Pi micro-controllers
-- No known multi-tasker for Electo-Smith Daisy
+- Raspberry Pi micro-controllers: use existing real-time OS and Gforth C FFI (easy)
+- Electo-Smith Daisy Seed: no supported RT OS known (challenging)
+
+## Conclusion
+
+- Two major challenges
+    - No Gforth cross-compiler writing documentation
+    - No supported RT OS known for Electro-Smith Daisy Seed
+- Adding multi-tasking to a simpler Forth is more likely to succeed
 
 # Questions?
