@@ -1,1 +1,13 @@
+*.html binary
+*.svg binary
 *.pdf binary
+*.png binary
+*.jpg binary
+*.js binary
+*.map binary
+*.css binary
+*.json binary
+*.xml binary
+*.wav filter=lfs diff=lfs merge=lfs -text
+*.rproj text eol=lf
+*.zip filter=lfs diff=lfs merge=lfs -text
