@@ -3,6 +3,7 @@ title: "Adventures with Gforth 1.0"
 subtitle: "Silicon Valley FIG Forth Day, November 21, 2026"
 author: "M. Edward (Ed) Borasky"
 institute: <https://github.com/znmeb/Adventures-with-Gforth-1.0>
+bibliography: REFERENCES.bib
 format: 
     beamer:
         theme: Montpellier
