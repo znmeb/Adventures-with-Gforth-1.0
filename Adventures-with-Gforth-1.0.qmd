@@ -13,15 +13,61 @@ format:
 editor: source
 ---
 
-## Question before the house
+# Context: How much computer music can I get out of really tiny computers?
 
-- How much computer music can I get out of really tiny computers?
-- Wait? How tiny?
-    - Raspberry Pi Pico W (micro-controller)
-    - Raspberry Pi Pico 2 W (micro-controller)
-    - Raspberry Pi Zero 2 W (small single-board computer)
-- The prime directives:
-    - Develop interactively ***for*** the device ***on*** the device
-    - Command line / terminal user interface
+## Computer music?
 
-## Sounds like a perfect application for Forth!
+- Algorithmically composed and digitally synthesized music
+
+## Wait? How tiny?
+
+- Raspberry Pi Pico W (micro-controller)
+- Raspberry Pi Pico 2 W (micro-controller)
+- Electro-Smith Daisy Seed (micro-controller with audio hardware)
+- Raspberry Pi Zero 2 W (small 64-bit Linux single-board computer)
+- Bela Gem (small 64-bit Linux single-board computer with audio hardware)
+- Anbernic RG CubeXX (handheld 64-bit Linux gaming console)
+
+## The prime directives:
+
+- Develop interactively ***for*** the device ***on*** the device
+- Command line / terminal user interface
+
+# GNU Forth 1.0 (Gforth)
+
+## Basics
+
+- GPL 3.0 License
+- Mixed C and Forth code
+- All of Forth 2012 standard plus many extensions
+- Available for Windows, MacOS, Android, some Linux distros
+- Supports mulitple architectures
+- Can be compiled for any system with new enough GCC and libraries
+- Extensions useful for computer music
+    - Cross-compiler: create a Forth for micro-controllers on single-board computer
+    - Multi-tasker: use multiple cores, accurate audio timings
+
+## Challenges
+
+- Too big for micro-controllers - needs a cross(meta)-compiler
+    - This is the biggest challenge
+- Build from source is complex
+    - Raspberry Pi Zero 2 W can't compile - not enough RAM
+    - Not a serious issue - compiles can run on a larger machine
+    - Bela Gem can't compile - not enough RAM
+    - Not a serious issue - compiles can run on a larger machine
+
+# The Plan
+
+## Tackle the cross-compilers
+
+- Need two cross-compilers
+    - GCC to build Gforth for the Pi Zero 2 W and Bela Gem
+    - Gforth cross-compiler for the micro-controllers
+
+## Develop a multi-tasker for the micro-controllers
+
+- Use existing real-time OS and gforth C FFI for Raspberry Pi micro-controllers
+- No known multi-tasker for Electo-Smith Daisy
+
+# Questions?
